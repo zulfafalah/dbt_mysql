@@ -1,4 +1,5 @@
 dbt_airbyte:
+  target: dev
   outputs:
     dev:
       type: mysql
