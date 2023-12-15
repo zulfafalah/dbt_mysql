@@ -37,7 +37,7 @@ models:
     generated:
       airbyte_ctes:
         +tags: airbyte_internal_cte
-        +materialized: ephemeral
+        +materialized: view
       airbyte_tables:
         +tags: normalized_tables
         +materialized: table
