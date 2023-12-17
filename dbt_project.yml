@@ -7,7 +7,8 @@ config-version: 2
 
 # This setting configures which "profile" dbt uses for this project. Profiles contain
 # database connection information, and should be configured in the  ~/.dbt/profiles.yml file
-profile: 'normalize'
+profile: 
+  -normalize
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that source models can be found
@@ -19,7 +20,7 @@ test-paths: ["tests"]
 seed-paths: ["data"]
 macro-paths: ["macros"]
 
-target-path: "../build"  # directory which will store compiled SQL files
+# target-path: "../build"  # directory which will store compiled SQL files
 modules-path: "../dbt_modules"  # directory which will store external DBT dependencies
 
 clean-targets:         # directories to be removed by `dbt clean`
@@ -55,3 +56,4 @@ models:
 
 vars:
   dbt_utils_dispatch_list: ['dbt_airbyte']
+  DBT_TARGET_PATH: "../build"
